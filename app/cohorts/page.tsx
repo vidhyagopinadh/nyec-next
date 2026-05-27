@@ -3,7 +3,7 @@
 import { useForm, Field } from '@tanstack/react-form'
 import { useSyncExternalStore } from 'react'
 import { cohortStore } from './store'
-import Sidebar from '../../components/Sidebar'
+import { Sidebar } from '../../components/Sidebar'
 import Topbar from '../../components/Topbar'
 
 function useCohorts() {

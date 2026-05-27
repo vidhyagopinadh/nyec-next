@@ -1,19 +1,32 @@
-export default function Sidebar() {
+import { Home, Users, FileText, ShieldCheck, Settings } from 'lucide-react'
+
+export function Sidebar() {
+    const items = [
+        { icon: Home, label: 'Search', active: true },
+        { icon: Users, label: 'Cohorts' },
+        { icon: FileText, label: 'Clinical Data' },
+        { icon: ShieldCheck, label: 'Audit Log' },
+        { icon: Settings, label: 'Admin' },
+    ]
+
     return (
-        <div className="w-56 bg-white border-r border-gray-200 flex-shrink-0">
-            <div className="p-4 border-b border-gray-200">
-                <h1 className="text-sm font-semibold text-gray-800">NY Public Health Portal</h1>
+        <aside className="w-56 bg-white border-r border-gray-200 flex flex-col py-6">
+            <div className="px-6 mb-6">
+                <h1 className="text-lg font-semibold text-blue-700">NY Public Health Portal</h1>
                 <p className="text-xs text-gray-500">SHIN-NY · Epidemiology</p>
             </div>
-            <nav className="mt-2">
-                <div className="px-4 py-2 text-sm font-medium text-blue-700 bg-blue-50 border-l-2 border-blue-700">
-                    Patient Search
-                </div>
-                <div className="px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 cursor-pointer">Cohorts</div>
-                <div className="px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 cursor-pointer">Clinical Data</div>
-                <div className="px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 cursor-pointer">Audit Log</div>
-                <div className="px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 cursor-pointer">Admin</div>
+            <nav className="space-y-1">
+                {items.map(({ icon: Icon, label, active }) => (
+                    <div
+                        key={label}
+                        className={`flex items-center gap-3 px-6 py-2 cursor-pointer rounded-md ${active ? 'bg-blue-50 text-blue-700 font-medium' : 'text-gray-600 hover:bg-gray-100'
+                            }`}
+                    >
+                        <Icon size={18} />
+                        {label}
+                    </div>
+                ))}
             </nav>
-        </div>
+        </aside>
     )
 }
