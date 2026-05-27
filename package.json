@@ -9,6 +9,16 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@sentry/nextjs": "^10.54.0",
+    "@tanstack/react-form": "^1.32.1",
+    "@tanstack/react-query": "^5.100.14",
+    "@tanstack/react-store": "^0.11.0",
+    "@tanstack/react-table": "^8.21.3",
+    "@tanstack/react-virtual": "^3.13.26",
+    "ag-grid-community": "^35.3.0",
+    "ag-grid-react": "^35.3.0",
+    "better-auth": "^1.6.11",
+    "drizzle-orm": "^0.45.2",
     "next": "16.2.6",
     "react": "19.2.4",
     "react-dom": "19.2.4"
